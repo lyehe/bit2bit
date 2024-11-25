@@ -16,7 +16,7 @@
       property="og:description"
       content="bit2bit: 1-bit quanta video reconstruction via self-supervised photon prediction"
     />
-    <meta property="og:url" content="https://bit2bit.github.io" />
+    <meta property="og:url" content="https://lyehe.github.io/bit2bit" />
     <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
     <meta property="og:image" content="static/image/banner.png" />
     <meta property="og:image:width" content="1200" />
@@ -224,6 +224,27 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
+              <div class="image-compare">
+                <div class="image-wrapper">
+                  <img
+                    src="static/images/mandrill_denoise.svg"
+                    alt="Denoised Mandrill Image"
+                    class="comparison-image"
+                  />
+                  <div class="image-overlay">
+                    <img
+                      src="static/images/mandrill_noise.svg"
+                      alt="Noisy Mandrill Image"
+                    />
+                  </div>
+                  <div class="slider-line"></div>
+                </div>
+                <div class="image-labels">
+                  <span class="label"
+                    >Single frame of input| Reconstructed output
+                  </span>
+                </div>
+              </div>
               <p>
                 Quanta image sensors, such as SPAD arrays, are an emerging
                 sensor technology, producing 1-bit arrays representing photon
@@ -257,28 +278,6 @@
                 usability of the data, enabling the application of existing
                 analysis techniques.
               </p>
-            </div>
-
-            <div class="image-compare">
-              <div class="image-wrapper">
-                <img
-                  src="static/images/mandrill_denoise.svg"
-                  alt="Denoised Mandrill Image"
-                  class="comparison-image"
-                />
-                <div class="image-overlay">
-                  <img
-                    src="static/images/mandrill_noise.svg"
-                    alt="Noisy Mandrill Image"
-                  />
-                </div>
-                <div class="slider-line"></div>
-              </div>
-              <div class="image-labels">
-                <span class="label"
-                  >Single frame of input| Reconstructed output
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -401,7 +400,12 @@
               <img
                 src="static/images/masked_loss.svg"
                 alt="Masking process"
-                style="max-width: 800px; margin: 1rem auto; display: block"
+                style="
+                  width: 100%;
+                  max-width: 800px;
+                  margin: 1rem auto;
+                  display: block;
+                "
               />
               <p class="has-text-justified">
                 We show that by masking the complementary pixels in the loss
