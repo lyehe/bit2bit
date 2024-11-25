@@ -121,9 +121,7 @@
                   Birmingham, <br />NeurIPS 2024</span
                 >
                 <span class="eql-cntrb"
-                  ><small
-                    ><br /><sup>* </sup>Joint Supervision</small
-                  ></span
+                  ><small><br /><sup>* </sup>Joint Supervision</small></span
                 >
               </div>
 
@@ -134,7 +132,7 @@
                     <a
                       href="https://arxiv.org/pdf/2410.23247"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      class="button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -148,7 +146,7 @@
                     <a
                       href="https://drive.google.com/drive/folders/1M5bsmsaLBkYmO7nMUjK5_m71RonOp-P9"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      class="button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -162,7 +160,7 @@
                     <a
                       href="https://github.com/lyehe/ssunet"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      class="button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -176,7 +174,7 @@
                     <a
                       href="https://arxiv.org/abs/2410.23247"
                       target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
+                      class="button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -202,7 +200,7 @@
               src="static/videos/Rotating_Mandrill_Skip_10.webm"
               type="video/webm"
             />
-            <source 
+            <source
               src="static/videos/Rotating_Mandrill_Skip_10.mp4"
               type="video/mp4"
             />
@@ -212,15 +210,7 @@
             data collected from high-speed single photon avalanche diode (SPAD)
             cameras, at the original spatial-temporal resolution, using only the
             data itself.
-            <b
-              >Left: raw binary data input | Right: reconstructed video
-              output</b
-            >
-            <br />
-            <i
-              >(Large video files, please wait for the videos to load. Zoom in
-              for details.)</i
-            >
+            <b>Raw SPAD binary data | Reconstructed smooth video </b>
           </h2>
         </div>
       </div>
@@ -268,6 +258,28 @@
                 analysis techniques.
               </p>
             </div>
+
+            <div class="image-compare">
+              <div class="image-wrapper">
+                <img
+                  src="static/images/mandrill_denoise.svg"
+                  alt="Denoised Mandrill Image"
+                  class="comparison-image"
+                />
+                <div class="image-overlay">
+                  <img
+                    src="static/images/mandrill_noise.svg"
+                    alt="Noisy Mandrill Image"
+                  />
+                </div>
+                <div class="slider-line"></div>
+              </div>
+              <div class="image-labels">
+                <span class="label"
+                  >Single frame of input| Reconstructed output
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -275,13 +287,12 @@
     <!-- End paper abstract -->
 
     <!-- Youtube video -->
-    <section class="hero is-small is-light">
+    <section class="hero is-small">
       <div class="hero-body">
-        <div class="container">
-          <!-- Paper video. -->
-          <h2 class="title is-3">Video Summary</h2>
-          <div class="columns is-centered has-text-centered">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
             <div class="column is-four-fifths">
+              <h2 class="title is-3">Video summary</h2>
               <div class="publication-video">
                 <!-- Youtube embed code here -->
                 <iframe
@@ -296,10 +307,7 @@
                 ></iframe>
               </div>
               <h2 class="subtitle has-text-centered">
-                <i
-                  >(Please change the display quality to 1080p for better
-                  video quality)</i
-                >
+                <i>remember to change the display quality to 1080p</i>
               </h2>
             </div>
           </div>
@@ -309,199 +317,186 @@
     <!-- End youtube video -->
 
     <!-- Video carousel -->
-    <section class="hero is-small">
+    <section class="hero is-small is-light">
       <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3">Results from simulated data</h2>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Introduction</h2>
+              <h2 class="subtitle has-text-justified">
+                <br />
+                <strong>Single-photon avalanche diode (SPAD)</strong>
+              </h2>
+              <p class="has-text-justified">
+                <a
+                  href="https://en.wikipedia.org/wiki/Single-photon_avalanche_diode"
+                  target="_blank"
+                  class="external-link"
+                  >single photon avalanche diode (SPAD)</a
+                >
+                is a highly sensitive photodetector that operates above its
+                breakdown voltage, allowing it to detect individual photons by
+                triggering a self-sustaining avalanche current when a single
+                photon hits the device. SPADs have evolved significantly since
+                their early development, particularly with CMOS implementation
+                in the early 2000s, and are now used in various applications
+                including LIDAR, PET scanning, fluorescence lifetime microscopy,
+                and quantum key distribution, with recent advances achieving
+                higher fill factors, lower noise, and integration into arrays
+                with over 1 million pixels.
+              </p>
+              <br />
 
-          <div class="item item-video0">
-            <video
-              poster=""
-              id="video0"
-              autoplay
-              controls
-              muted
-              loop
-              height="100%"
-            >
-              <source
-                src="static/videos/Simulated_Video_with_ground_truth.webm"
-                type="video/webm"
+              <h2 class="subtitle has-text-justified">
+                <strong>Quanta image generation process</strong>
+              </h2>
+              <img
+                src="static/images/SPAD_process.svg"
+                alt="SPAD process diagram"
+                style="
+                  width: 80%;
+                  max-width: 800px;
+                  margin: 1rem auto;
+                  display: block;
+                "
               />
-              <source
-                src="static/videos/Simulated_Video_with_ground_truth.mp4"
-                type="video/mp4"
+              <p class="has-text-justified">
+                The process of quanta image generation is shown above. A
+                continuous signal in spacetime generates photons according to a
+                Poisson process, where the rate parameter λ is proportional to
+                the signal intensity. These photons are then detected by the
+                SPAD array with a certain quantum efficiency, producing binary
+                measurements that indicate whether at least one photon was
+                detected during each exposure period. For a more detailed
+                discussion of this process, please refer to the
+                <a
+                  href="https://arxiv.org/abs/2208.10350"
+                  target="_blank"
+                  class="external-link"
+                  >very nice review</a
+                >
+                by Dr. Stanley Chan.
+              </p>
+              <br />
+
+              <h2 class="subtitle has-text-justified">
+                <strong>Poisson/Bernoulli denoising</strong>
+              </h2>
+              <p class="has-text-justified">
+                <a
+                  href="https://openaccess.thecvf.com/content/WACV2024/papers/Krull_Image_Denoising_and_the_Generative_Accumulation_of_Photons_WACV_2024_paper.pdf"
+                  target="_blank"
+                  class="external-link"
+                  >Generative accumulation of photons</a
+                >
+                has shown promise in reconstructing high-quality images from
+                extremely noisy photon counting data by using binomial sampling
+                to create training pairs. However, the binary nature of SPAD
+                data makes the Poisson distribution assumption inadequate. The
+                process is modeled using a Bernoulli lattice process derived
+                from truncated Poisson distribution. The splitting process
+                creates complementary pixel dependencies, leading to significant
+                reconstruction artifacts as shown in the figure below.
+              </p>
+              <img
+                src="static/images/masked_loss.svg"
+                alt="Masking process"
+                style="
+                  max-width: 800px;
+                  margin: 1rem auto;
+                  display: block;
+                "
               />
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <b
-                >iPhone slowmo video | Simulated data with 0.06250 photons/pixel
-                | Reconstructed output</b
-              >
-            </h2>
+              <p class="has-text-justified">
+                We show that by masking the complementary pixels in the loss
+                computation, we can eliminate the reconstruction artifacts and
+                generalize the method for extremely photon sparse 1-bit data.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- End video carousel -->
 
-    <!-- Video carousel -->
+    <!-- Contributions -->
     <section class="hero is-small">
       <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3">Results from real SPAD data</h2>
-          <div id="results-carousel-2" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video
-                poster=""
-                id="video1"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Sonicate_Bubble_Skip_100.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Sonicate_Bubble_Skip_100.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Detergent sonicated with 1.5MHz ultrasound, with stochastic
-                bubble motion, vibration and mist
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Key Contributions</h2>
+              <div class="content has-text-justified">
+                <ol>
+                  <li>
+                    <strong>Self-supervised ramework:</strong>
+                    Developing a self-supervised method that denoises
+                    photon-sparse binary quanta images, which effectively
+                    handles the binary nature of the data through a novel
+                    masking strategy.
+                  </li>
+
+                  <li>
+                    <strong>Higher dimensionality integration:</strong>
+                    Enhancing the performance of reconstruction by leveraging
+                    the temporal information that is readily available in most
+                    quanta image data.
+                  </li>
+
+                  <li>
+                    <strong>New sampling strategy:</strong>
+                    Providing insights on stochastic sampling, training, and
+                    regularization techniques to manage overfitting and improve
+                    the reconstruction quality.
+                  </li>
+
+                  <li>
+                    <strong>New data:</strong>
+                    Presenting a novel dataset with real and simulated 1-bit
+                    SPAD data to support further research and quantitative
+                    evaluation of quanta image processing.
+                  </li>
+                </ol>
+              </div>
             </div>
-            <div class="item item-video2">
-              <video
-                poster=""
-                id="video2"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Moving_Camera_CPU_fan_Skip_20.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Moving_Camera_CPU_fan_Skip_20.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Video of CPU fan under rapid rotation with active camera motion
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video3">
-              <video
-                poster=""
-                id="video3"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Plasma_Ball_Skip_10.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Plasma_Ball_Skip_10.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Plasma ball imaged around the swtiching frequency (6 ns
-                exposure)
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video4">
-              <video
-                poster=""
-                id="video4"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Rotating_USAF_1951_Target_Skip100.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Rotating_USAF_1951_Target_Skip100.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Rotating USAF target (about the optical axis)
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video5">
-              <video
-                poster=""
-                id="video5"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Drill_USAF_1951_Target_Skip_20.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Drill_USAF_1951_Target_Skip_20.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Rotating USAF target (about the vertical axis)
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video6">
-              <video
-                poster=""
-                id="video6"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Moving_microscope_slide.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Moving_microscope_slide.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                H&E stained microscope slide under active motion
-                <br />
-                <b>SPAD data | Reconstructed output</b>
-              </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video carousel -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column">
+              <h2 class="title is-3">Results from simulated data</h2>
+
+              <div class="item item-video0">
+                <video
+                  poster=""
+                  id="video0"
+                  autoplay
+                  controls
+                  muted
+                  loop
+                  height="100%"
+                >
+                  <source
+                    src="static/videos/Simulated_Video_with_ground_truth.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="static/videos/Simulated_Video_with_ground_truth.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <h2 class="subtitle has-text-centered">
+                  <b
+                    >Groud truth | Simulated data | Reconstruction</b
+                  >
+                </h2>
+              </div>
             </div>
           </div>
         </div>
@@ -512,110 +507,170 @@
     <!-- Video carousel -->
     <section class="hero is-small">
       <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3">
-            Simulated 3D confocal microscopy data (XYZ)
-          </h2>
-          <div id="results-carousel-1" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video
-                poster=""
-                id="video1"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d05993PPP.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d05993PPP.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Simulated input with 0.05993 photons per pixel
-                <br />
-                <b>Simulated data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video1">
-              <video
-                poster=""
-                id="video2"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/Simulated_Microscopy.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/Simulated_Microscopy.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Comparison between reconstructed output and ground truth
-                <br />
-                <b>Reconstructed output | Ground truth</b>
-              </h2>
-            </div>
-            <div class="item item-video3">
-              <video
-                poster=""
-                id="video3"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d01546PPP.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d01546PPP.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Simulated input with 0.01546 photons per pixel
-                <br />
-                <b>Simulated data | Reconstructed output</b>
-              </h2>
-            </div>
-            <div class="item item-video3">
-              <video
-                poster=""
-                id="video3"
-                autoplay
-                controls
-                muted
-                loop
-                height="100%"
-              >
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d00777PPP.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="static/videos/pseudohe_heart_812x512x512_0d00777PPP.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <h2 class="subtitle has-text-centered">
-                Simulated input with 0.00777 photons per pixel
-                <br />
-                <b>Simulated data | Reconstructed output</b>
-              </h2>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Results from real SPAD data</h2>
+              <div id="results-carousel-2" class="carousel results-carousel">
+                <div class="item item-video1">
+                  <video
+                    poster=""
+                    id="video1"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Sonicate_Bubble_Skip_100.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Sonicate_Bubble_Skip_100.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Detergent sonicated with 1.5MHz ultrasound, with stochastic
+                    bubble motion, vibration and mist
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+
+                <div class="item item-video2">
+                  <video
+                    poster=""
+                    id="video2"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Moving_Camera_CPU_fan_Skip_20.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Moving_Camera_CPU_fan_Skip_20.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Video of CPU fan under rapid rotation with active camera
+                    motion
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+
+                <div class="item item-video3">
+                  <video
+                    poster=""
+                    id="video3"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Plasma_Ball_Skip_10.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Plasma_Ball_Skip_10.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Plasma ball imaged around the swtiching frequency (6 ns
+                    exposure)
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+
+                <div class="item item-video4">
+                  <video
+                    poster=""
+                    id="video4"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Rotating_USAF_1951_Target_Skip100.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Rotating_USAF_1951_Target_Skip100.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Rotating USAF target (about the optical axis)
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+
+                <div class="item item-video5">
+                  <video
+                    poster=""
+                    id="video5"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Drill_USAF_1951_Target_Skip_20.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Drill_USAF_1951_Target_Skip_20.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Rotating USAF target (about the vertical axis)
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+
+                <div class="item item-video6">
+                  <video
+                    poster=""
+                    id="video6"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Moving_microscope_slide.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Moving_microscope_slide.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    H&E stained microscope slide under active motion
+                    <br />
+                    <b>SPAD data | Reconstructed output</b>
+                  </h2>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -623,10 +678,125 @@
     </section>
     <!-- End video carousel -->
 
+    <!-- Video carousel -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Simulated 3D microscopy data (XYZ)</h2>
+              <div id="results-carousel-1" class="carousel results-carousel">
+                <div class="item item-video1">
+                  <video
+                    poster=""
+                    id="video1"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d05993PPP.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d05993PPP.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Simulated input with 0.05993 photons per pixel
+                    <br />
+                    <b>Simulated data | Reconstructed output</b>
+                  </h2>
+                </div>
+                <div class="item item-video1">
+                  <video
+                    poster=""
+                    id="video2"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/Simulated_Microscopy.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/Simulated_Microscopy.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Comparison between reconstructed output and ground truth
+                    <br />
+                    <b>Reconstructed output | Ground truth</b>
+                  </h2>
+                </div>
+                <div class="item item-video3">
+                  <video
+                    poster=""
+                    id="video3"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d01546PPP.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d01546PPP.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Simulated input with 0.01546 photons per pixel
+                    <br />
+                    <b>Simulated data | Reconstructed output</b>
+                  </h2>
+                </div>
+                <div class="item item-video3">
+                  <video
+                    poster=""
+                    id="video3"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d00777PPP.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="static/videos/pseudohe_heart_812x512x512_0d00777PPP.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Simulated input with 0.00777 photons per pixel
+                    <br />
+                    <b>Simulated data | Reconstructed output</b>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End video carousel -->
     <!-- Data from QBP -->
     <section class="hero is-small">
       <div class="hero-body">
-        <div class="container">
+        <div class="container is-max-desktop">
           <h2 class="title is-3">
             Reconstruction using SPAD data from
             <a
@@ -637,13 +807,13 @@
           </h2>
           <div class="item item-video8">
             <video
-              poster=""
               id="video8"
               autoplay
               controls
               muted
               loop
               height="100%"
+              style="width: 100%"
             >
               <source
                 src="static/videos/Video_from_QBP.webm"
@@ -654,13 +824,6 @@
                 type="video/mp4"
               />
             </video>
-            <h2 class="subtitle has-text-centered">
-              Person playing guitar, with vibrating guitar string
-              <br />
-              <b>Raw SPAD data | Output at 1x speed</b>
-              <br />
-              <b>10x speed | 50x speed</b>
-            </h2>
           </div>
         </div>
       </div>
@@ -691,7 +854,7 @@
           booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
           year={2024},
           url={https://openreview.net/forum?id=HtlfNbyfOn}
-          }</code
+          }</code 
         ></pre>
       </div>
     </section>
@@ -709,11 +872,9 @@
                   target="_blank"
                   >Academic Project Page Template</a
                 >
-                which was adopted from the <a
-                  href="https://nerfies.github.io"
-                  target="_blank"
-                  >Nerfies</a
-                > project page. <b>Both authors are awosome! </b> <br />You are
+                which was adopted from the
+                <a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+                project page. <b>Both authors are awosome! </b> <br />You are
                 free to borrow the source code of this website, we just ask that
                 you link back to this page in the footer. <br />
                 This website is licensed under a
