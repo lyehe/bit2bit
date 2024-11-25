@@ -88,27 +88,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Cleanup on page unload
   window.addEventListener('unload', () => cancelAnimationFrame(rafId));
-
-  // Pause videos when they're not in viewport
-  // Get all video elements
-  const videos = document.getElementsByTagName('video');
-  
-  // Create intersection observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Play video if in view, pause if not
-      if (entry.isIntersecting) {
-        entry.target.play();
-      } else {
-        entry.target.pause();
-      }
-    });
-  }, {
-    threshold: 0.2  // 20% of the video must be visible
-  });
-
-  // Observe each video
-  Array.from(videos).forEach(video => {
-    observer.observe(video);
-  });
 });
